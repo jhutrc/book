@@ -6,4 +6,4 @@ root: intro
 chapters:
 - file: studydesign
 - file: statistics
-- file: challenge-opport
+- file: challenges
