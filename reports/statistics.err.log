@@ -25,6 +25,17 @@ import urllib, json
 import numpy as np
 import sqlite3 as sq3
 
+# To embed sankey in my book: chatGPT!
+import plotly.offline as pyo
+import plotly.graph_objs as go
+
+# create your Sankey diagram
+fig = go.Figure(data=[go.Sankey(...)])
+
+# save the diagram as an HTML file
+pyo.plot(fig, filename='my_sankey.html', auto_open=False)
+
+
 label = ['Donors',
          "General Population", 
          "Healthy Controls", 
