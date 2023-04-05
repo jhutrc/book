@@ -87,5 +87,6 @@ html_sankey = fig.to_html(full_html=False)
 {html_sankey}
 ```
 
+![](sankey.png)
 
 [^1]: An issue of [resilience](https://journals.lww.com/journalacs/Abstract/2010/06000/Frailty_as_a_Predictor_of_Surgical_Outcomes_in.3.aspx) to surgical stress
