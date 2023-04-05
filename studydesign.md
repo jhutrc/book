@@ -96,4 +96,26 @@ HTML(html_sankey)
 
 graçias, chatGPT!
 
+```
+import matplotlib.pyplot as plt
+import numpy as np
+
+# Generate some random data
+x = np.linspace(0, 2*np.pi, 100)
+y = np.sin(x)
+
+# Create the figure and axis objects
+fig, ax = plt.subplots()
+
+# Plot the data on the axis
+ax.plot(x, y)
+
+# Add interactivity to the plot
+ax.set_title('Interactive plot')
+ax.set_xlabel('x')
+ax.set_ylabel('y')
+
+plt.show()
+```
+
 [^1]: An issue of [resilience](https://journals.lww.com/journalacs/Abstract/2010/06000/Frailty_as_a_Predictor_of_Surgical_Outcomes_in.3.aspx) to surgical stress
