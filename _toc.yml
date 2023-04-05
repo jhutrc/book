@@ -4,6 +4,6 @@
 format: jb-book
 root: intro
 chapters:
-- file: studydesign
+- file: studydesign2
 - file: statistics
 - file: challenges
