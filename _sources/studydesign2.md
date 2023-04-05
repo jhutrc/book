@@ -31,10 +31,8 @@ Key outcomes (LINKAGE)
      2. ESRD
      3. Survival
      
+     
 ```{hide-input}
-from IPython.display import HTML
-
-# Define the Sankey diagram as before
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go 
@@ -82,14 +80,13 @@ layout = dict(title=dict(text="Sankey Diagram"),
 data = go.Sankey(link=link, node=node)
 
 fig = go.Figure(data=data, layout=layout)
-
-# Save the figure as an HTML file
 html_sankey = fig.to_html(full_html=False)
-
-# Embed the HTML file in the Jupyter Book
-HTML(html_sankey)
 ```
 
-graçias, chatGPT!
+```
+{html_sankey}
+```
+
+![](sankey.png)
 
 [^1]: An issue of [resilience](https://journals.lww.com/journalacs/Abstract/2010/06000/Frailty_as_a_Predictor_of_Surgical_Outcomes_in.3.aspx) to surgical stress
