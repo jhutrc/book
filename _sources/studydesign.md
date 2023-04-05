@@ -84,7 +84,7 @@ data = go.Sankey(link=link, node=node)
 fig = go.Figure(data=data, layout=layout)
 
 # Save the figure as an HTML file
-html_sankey = fig.to_html(full_html=False)
+html_sankey = fig.to_html(full_html=True)
 
 # Embed the HTML file in the Jupyter Book
 HTML(html_sankey)
