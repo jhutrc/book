@@ -159,9 +159,6 @@ const thebe_selector_output = ".output, .cell_output"
         <ul class="current nav bd-sidenav">
 <li class="toctree-l1 current active"><a class="current reference internal" href="#">Study design</a></li>
 <li class="toctree-l1"><a class="reference internal" href="statistics.html">Statistical analysis</a></li>
-
-
-
 <li class="toctree-l1"><a class="reference internal" href="challenges.html">Challenges &amp; opportunities</a></li>
 </ul>
 
@@ -264,7 +261,7 @@ const thebe_selector_output = ".output, .cell_output"
       
       
       
-      <li><a href="_sources/studydesign.md" target="_blank"
+      <li><a href="_sources/studydesign.ipynb" target="_blank"
    class="btn btn-sm btn-download-source-button dropdown-item"
    title="Download source file"
    data-bs-placement="left" data-bs-toggle="tooltip"
@@ -274,7 +271,7 @@ const thebe_selector_output = ".output, .cell_output"
 <span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="btn__text-container">.md</span>
+<span class="btn__text-container">.ipynb</span>
 </a>
 </li>
       
@@ -360,11 +357,94 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="study-design">
 <h1>Study design<a class="headerlink" href="#study-design" title="Permalink to this heading">#</a></h1>
-<p><img alt="" src="_images/studydesign.png" /></p>
-<p><img alt="sankey" src="_images/sankey.html" /></p>
-<ol class="arabic simple">
-<li><p><a class="reference external" href="https://journals.lww.com/journalacs/Abstract/2010/06000/Frailty_as_a_Predictor_of_Surgical_Outcomes_in.3.aspx">surgical stress</a></p></li>
-</ol>
+<p>Live kidney donors (OPTN), N=180,000</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> 1. Registry
+ 2. Screened
+ 3. Healthy
+</pre></div>
+</div>
+<p>Matached nondonors (NHANES), N=150,000</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> 1. Survey
+ 2. Unscreened
+</pre></div>
+</div>
+<p>Key outcomes (LINKAGE)</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span> 1. Perioperative complications [^1]
+ 2. ESRD
+ 3. Survival
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>```{hidden-code-block}
+import pandas as pd
+import plotly.express as px
+import plotly.graph_objects as go 
+import urllib, json
+import numpy as np
+import sqlite3 as sq3
+
+label = [&#39;Donors&#39;,
+         &quot;General Population&quot;, 
+         &quot;Healthy Controls&quot;, 
+         &quot;Centers for Medicare&quot;,
+         &quot;National Death Index&quot;, 
+         &quot;ESRD&quot;, 
+         &quot;Death&quot;]
+
+source = [0,1,2,   0,1,2,
+          3, 4]  
+
+target = [3,3,3,   4,4,4, 
+          5, 6]  
+
+value = [57.1,38.1,4.8,  57.1,38.1,4.8, 
+         10,90]   
+
+# Define colors for links and nodes
+link_color = [&#39;#1f77b4&#39;, &#39;#1f77b4&#39;, &#39;#1f77b4&#39;, 
+              &#39;#ff7f0e&#39;, &#39;#ff7f0e&#39;, &#39;#ff7f0e&#39;, 
+              &#39;#2ca02c&#39;]
+node_color = [&#39;#aec7e8&#39;, &#39;#ffbb78&#39;, &#39;#98df8a&#39;, 
+              &#39;#ff9896&#39;, &#39;#c5b0d5&#39;, &#39;#c49c94&#39;, 
+              &#39;#c7c7c7&#39;]
+
+link = dict(source=source, target=target, value=value, 
+            color=link_color)
+node = dict(label=label, pad=50, thickness=30, 
+            color=node_color, 
+            line=dict(color=&#39;white&#39;, width=0.5))
+
+# Define figure layout
+layout = dict(title=dict(text=&quot;Sankey Diagram&quot;), 
+              font=dict(size=14, family=&quot;Arial&quot;), 
+              height=600, width=800, 
+              margin=dict(l=50, r=50, t=50, b=50))
+
+data = go.Sankey(link=link, node=node)
+
+fig = go.Figure(data=data, layout=layout)
+html_sankey = fig.to_html(full_html=False)
+```
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  Cell In[1], line 1
+    ```{hidden-code-block}
+    ^
+SyntaxError: invalid syntax
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="n">html_sankey</span><span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
